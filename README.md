@@ -32,7 +32,7 @@ A React production build served by nginx on port 80, containerised with Docker a
 - SSH 22 from the Jenkins host's security group only, so Jenkins can deploy; SSH is not open to the internet
 
 **Jenkins host**
-- SSH 22, Jenkins 8080 and Uptime Kuma 3001 (restricted to my IP)
+- Jenkins 8080 open to the internet (GitHub webhook needs to reach it), Uptime Kuma 3001 from my IP only, SSH 22 as configured at launch
 
 ## Monitoring
 Uptime Kuma (open source) checks the site over HTTP every 30 seconds and sends an email alert through Gmail SMTP only when the app goes down (and a recovery email when it is back).
